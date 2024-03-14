@@ -27,32 +27,32 @@ namespace PetShop.Web.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(UserLogin login)
-        {
-            if (ModelState.IsValid)
-            {
-                ULoginData data = new ULoginData
-                {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Index(UserLogin login)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        ULoginData data = new ULoginData
+        //        {
 
-                    Credential = login.Credential,
-                    Password = login.Password,
-                    UserIp = Request.UserHostAddress,
-                    LoginDate = DateTime.Now
-                };
-                var userLogin = _auth.UserLogin(data);
-                if (userLogin.Status)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", userLogin.StatusMsg);
-                    return View();
-                }
-            }
-            return View();
-        }
+        //            Credential = login.Credential,
+        //            Password = login.Password,
+        //            UserIp = Request.UserHostAddress,
+        //            LoginDate = DateTime.Now
+        //        };
+        //        var userLogin = _auth.UserLogin(data);
+        //        if (userLogin.Status)
+        //        {
+        //            return RedirectToAction("Index", "Home");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", userLogin.StatusMsg);
+        //            return View();
+        //        }
+        //    }
+        //    return View();
+        //}
     }
 }

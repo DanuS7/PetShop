@@ -1,0 +1,6 @@
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\bin\Debug\PetShop.Helpers.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\bin\Debug\PetShop.Helpers.pdb
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.csproj.AssemblyReference.cache
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.pdb

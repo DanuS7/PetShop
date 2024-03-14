@@ -63,3 +63,7 @@ C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\roslyn\System.B
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\roslyn\System.Memory.dll
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\roslyn\System.Numerics.Vectors.dll
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\PetShop.BusinessLogic.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\PetShop.Domain.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\PetShop.BusinessLogic.pdb
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.Web\bin\PetShop.Domain.pdb

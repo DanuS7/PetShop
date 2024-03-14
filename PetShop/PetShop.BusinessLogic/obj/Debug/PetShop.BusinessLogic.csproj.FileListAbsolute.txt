@@ -1,0 +1,11 @@
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.BusinessLogic.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.BusinessLogic.pdb
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Domain.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Helpers.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Domain.pdb
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Helpers.pdb
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop..C73F157C.Up2Date
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.dll
+C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.pdb
