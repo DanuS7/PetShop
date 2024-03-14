@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Web", "PetShop.Web\PetShop.Web.csproj", "{22ECE46D-8496-4EA9-9E5F-B61376C5C3EA}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22ECE46D-8496-4EA9-9E5F-B61376C5C3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22ECE46D-8496-4EA9-9E5F-B61376C5C3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22ECE46D-8496-4EA9-9E5F-B61376C5C3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22ECE46D-8496-4EA9-9E5F-B61376C5C3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
