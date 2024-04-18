@@ -9,3 +9,44 @@ C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop..C73F157C.Up2Date
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.dll
 C:\Users\DayanFlora\Desktop\PetShop_TWeb\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.BusinessLogic.dll.config
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.BusinessLogic.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Antlr3.Runtime.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Domain.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Helpers.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Helpers.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Mvc.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Optimization.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Razor.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\WebGrease.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Domain.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Domain.dll.config
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Helpers.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\PetShop.Helpers.dll.config
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Helpers.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Mvc.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Optimization.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.Razor.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop.BusinessLogic.pdb
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\obj\Debug\PetShop..C73F157C.Up2Date
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Renci.SshNet.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Renci.SshNet.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.BusinessLogic\bin\Debug\Renci.SshNet.Async.xml
