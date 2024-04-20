@@ -12,6 +12,8 @@ C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpe
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Helpers.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Mvc.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Optimization.dll
@@ -24,6 +26,8 @@ C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpe
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\EntityFramework.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.xml
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.Async.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Helpers.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Mvc.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.Optimization.xml
@@ -33,10 +37,6 @@ C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpe
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.csproj.AssemblyReference.cache
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop..F5570B4F.Up2Date
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.dll
 C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop.Helpers.pdb
-C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\obj\Debug\PetShop..F5570B4F.Up2Date
-C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.Async.dll
-C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.dll
-C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.xml
-C:\Users\ACER\OneDrive\Desktop\Proiect de semestru\PetShop\PetShop\PetShop.Helpers\bin\Debug\Renci.SshNet.Async.xml
