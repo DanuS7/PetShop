@@ -1,13 +1,7 @@
-﻿using PetShop.BusinessLogic.AppBL;
-using PetShop.BusinessLogic.Interfaces;
+﻿using PetShop.BusinessLogic.Interfaces;
 using PetShop.Domain.Entities.Response;
 using PetShop.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceModel.Channels;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace PetShop.BusinessLogic.AppBL
 {
@@ -16,6 +10,20 @@ namespace PetShop.BusinessLogic.AppBL
         public ULoginResp UserLogin(ULoginData data)
         {
             return UserLoginAction(data);
+        }
+
+        public URegisterResp UserRegister(URegisterData data)
+        {
+            return UserRegisterAction(data);
+        }
+
+        public HttpCookie GenCookie(string loginCredential)
+        {
+            return Cookie(loginCredential);
+        }
+        public UserMinimal GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
         }
     }
 }

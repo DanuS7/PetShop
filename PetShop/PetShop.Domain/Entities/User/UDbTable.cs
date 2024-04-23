@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShop.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -38,6 +39,6 @@ namespace PetShop.Domain.Entities.User
         [StringLength(30)]
         public string LastIP { get; set; }
 
-        // URole needs to be added
+        public URole Level { get; set; }
     }
 }

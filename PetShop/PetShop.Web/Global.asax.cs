@@ -1,4 +1,7 @@
-﻿using PetShop.Web.App_Start;
+﻿using AutoMapper;
+using PetShop.Domain.Entities.User;
+using PetShop.Web.App_Start;
+using PetShop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +18,20 @@ namespace PetShop.Web
     {
         void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            InitializeAutoMapper();
+        }
+
+        protected static void InitializeAutoMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<UserLogin, ULoginData>();
+                cfg.CreateMap<UserRegister, URegisterData>();
+                cfg.CreateMap<UDbTable, UserMinimal>();
+            });
         }
     }
 }
