@@ -1,34 +1,46 @@
 ﻿@using System.Web.Optimization;
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <title> PetShop | @ViewBag.Title</title>
+    <meta charset="utf-8">
+    <title>EShopper - Bootstrap Shop Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    @Styles.Render("~/css");
-   
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    @Styles.Render("~/css/owlcarousel")
+
+    <!-- Customized Bootstrap Stylesheet -->
+    @Styles.Render("~/css")
 </head>
-<body>
-    <div class="hero_area">
-        <!-- header section strats -->
-        <header class="header_section">
-            <nav class="navbar navbar-expand-lg custom_nav-container ">
 
-                @Html.Partial("_Header")
-                @Html.Partial("_Navigation")
-            </nav>
-        </header>
-    </div>
-    @RenderBody()
+<body>
+
+    @Html.Partial("_Topbar")
+    @Html.Partial("_Navbar")
+
+    <div>@RenderBody()</div>
     @Html.Partial("_Footer")
 
-    @Scripts.Render("~/js");
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    @Scripts.Render("~js");
+
+    <!-- Contact Javascript File -->
+    @Scripts.Render("~js/contact");
+
+    <!-- Template Javascript -->
+    @Scripts.Render("~js/template");
 
 </body>
