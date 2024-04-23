@@ -1,4 +1,5 @@
-﻿using PetShop.BusinessLogic;
+﻿using AutoMapper;
+using PetShop.BusinessLogic;
 using PetShop.BusinessLogic.Interfaces;
 using PetShop.Domain.Entities.User;
 using PetShop.Web.Models;
@@ -14,12 +15,12 @@ namespace PetShop.Web.Controllers
     public class LoginController : Controller
     {
 
-        private readonly ISesion _auth;
+        private readonly ISesion _session;
         // GET: Login
         public LoginController()
         {
-            var bl = new BussinesLogic();
-            _auth = bl.GetSessionBL();
+            var bl = new BussinessLogic();
+            _session = bl.GetSessionBL();
         } 
         
         
@@ -34,17 +35,17 @@ namespace PetShop.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                ULoginData data = new ULoginData
-                {
+                var data = Mapper.Map<ULoginData>(login);
 
-                    Credential = login.Credential,
-                    Password = login.Password,
-                    UserIp = Request.UserHostAddress,
-                    LoginDate = DateTime.Now
-                };
-                var userLogin = _auth.UserLogin(data);
+                data.UserIp = Request.UserHostAddress;
+                data.LoginDate = DateTime.Now;
+
+                var userLogin = _session.UserLogin(data);
                 if (userLogin.Status)
                 {
+                    HttpCookie cookie = _session.GenCookie(login.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+
                     return RedirectToAction("Index", "Home");
                 }
                 else

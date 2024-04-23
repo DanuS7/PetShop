@@ -10,6 +10,5 @@ namespace PetShop.Domain.Entities.Response
     {
         public string ActionStatusMsg { get; set; }
         public bool Status { get; set; }
-
     }
 }
