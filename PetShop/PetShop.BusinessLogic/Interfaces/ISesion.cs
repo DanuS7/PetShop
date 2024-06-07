@@ -11,9 +11,13 @@ namespace PetShop.BusinessLogic.Interfaces
 {
     public interface ISesion
     {
-        ULoginResp UserLogin(ULoginData data);
-        URegisterResp UserRegister(URegisterData data);
+        Response UserLogin(ULoginData data);
+        Response UserLogout(UserMinimal profile);
+        Response UserRegister(URegisterData data, UserMinimal guestProfile);
+        Response GuestRegister(GuestRegisterData data);
         HttpCookie GenCookie(string loginCredential);
+        HttpCookie GenGuestCookie(string guestId);
         UserMinimal GetUserByCookie(string apiCookieValue);
+        Task<Response> CleanupGuestUsersAsync();
     }
 }

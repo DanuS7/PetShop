@@ -15,5 +15,15 @@ namespace PetShop.BusinessLogic
         {
             return new SessionBL();
         }
+
+        public IAdministration GetAdministrationBL()
+        {
+            return new AdministrationBL();
+        }
+
+        public IShopping GetShopping()
+        {
+            return new ShoppingBL();
+        }
     }
 }

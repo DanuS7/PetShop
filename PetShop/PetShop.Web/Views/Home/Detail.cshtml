@@ -1,0 +1,224 @@
+﻿@model PetShop.Web.Models.DetailView
+
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/User Layout/_Layout.cshtml";
+}
+
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Shop Detail</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Shop Detail</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Shop Detail Start -->
+<<div class="container-fluid py-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-5 pb-5">
+            <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner border">
+                    <div class="carousel-item active">
+                        <img class="w-100 h-100" src="data:image;base64,@Model.Details.DefaultImageBase64" alt="@Model.Details.Title">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 pb-5">
+            <h3 class="font-weight-semi-bold">@Model.Details.Title</h3>
+            <div class="d-flex mb-3">
+                @if (Model.Details.Reviews != null && Model.Details.Reviews != 0)
+                {
+                    <div class="text-primary mr-2">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            if (Model.Details.Rating >= i)
+                            {
+                                <i class="fas fa-star"></i>
+                            }
+                            else if (Model.Details.Rating > i - 1 && Model.Details.Rating < i)
+                            {
+                                <i class="fas fa-star-half-alt"></i>
+                            }
+                            else
+                            {
+                                <i class="far fa-star"></i>
+                            }
+                        }
+                    </div>
+                    <small class="pt-1">(@Model.Details.Reviews Reviews)</small>
+                }
+                else
+                {
+                    <div class="text-primary mr-2">
+                        <small class="far fa-star"></small>
+                        <small class="far fa-star"></small>
+                        <small class="far fa-star"></small>
+                        <small class="far fa-star"></small>
+                        <small class="far fa-star"></small>
+                    </div>
+                    <small class="pt-1">( No Reviews )</small>
+                }
+
+            </div>
+            <h3 class="font-weight-semi-bold mb-4">$@Model.Details.Price</h3>
+            <p class="mb-4">@Model.Details.Description</p>
+
+            <div class="d-flex align-items-center mb-4 pt-2">
+                <button class="btn btn-primary px-3 add-to-cart-btn" data-product-id="@Model.Details.Id"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="nav nav-tabs justify-content-center border-secondary mb-4">
+                @if (Model.Reviews != null && Model != null)
+                {
+                    <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-3">Reviews (@Model.Reviews.Count())</a>
+                }
+                else
+                {
+                    <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+                }
+
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-pane-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            @if (Model.Reviews != null && Model.Reviews.Any())
+                            {
+                                foreach (var review in Model.Reviews)
+                                {
+                                    <div class="media mb-4">
+                                        <div class="media-body">
+                                            <h6>@review.Name<small></small></h6>
+                                            <div class="text-primary mb-2">
+                                                @for (int i = 0; i < 5; i++)
+                                                {
+                                                    if (review.Rating > 0)
+                                                    {
+                                                        <i class="fas fa-star"></i>
+                                                    }
+                                                    else
+                                                    {
+                                                        <i class="far fa-star"></i>
+                                                    }
+                                                    review.Rating -= 1;
+                                                }
+
+                                            </div>
+                                            <p>@review.Description</p>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+
+                        </div>
+                        <div class="col-md-6">
+                            <form id="reviewForm">
+                                <h4 class="mb-4">Leave a review</h4>
+                                <div class="d-flex my-3" id="starRating">
+                                    <p class="mb-0 mr-2">Your Rating * :</p>
+                                    <div class="text-primary">
+                                        <i class="far fa-star" data-rating="1"></i>
+                                        <i class="far fa-star" data-rating="2"></i>
+                                        <i class="far fa-star" data-rating="3"></i>
+                                        <i class="far fa-star" data-rating="4"></i>
+                                        <i class="far fa-star" data-rating="5"></i>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="Rating" value="0"> 
+
+                                <input type="hidden" name="ProductId" value="@Model.Details.Id" />
+                                <div class="form-group">
+                                    <label for="message">Your Review *</label>
+                                    <textarea id="message" name="Description" cols="30" rows="5" class="form-control" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" name="Name" class="form-control" id="name" required>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.add-to-cart-btn').click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var quantity = 1;
+
+                var cartItem = {
+                    productId: productId,
+                    quantity: quantity
+                };
+
+                $.ajax({
+                    url: '/Shopping/AddToCart',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(cartItem),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Item added to cart successfully!');
+                            window.location.reload();
+                        } else {
+                            alert('Failed to add item to cart: ' + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error adding item to cart: ' + error);
+                    }
+                });
+            });
+        });
+
+        $('#starRating').on('click', 'i', function () {
+            var rating = $(this).data('rating');
+            $('#starRating i').removeClass('fas').addClass('far');
+            for (var i = 0; i < rating; i++) {
+                $('#starRating i').eq(i).removeClass('far').addClass('fas');
+            }
+            $('input[name="Rating"]').val(rating); 
+        });
+        $(function () {
+    $('#reviewForm').submit(function (e) {
+        e.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("AddReview", "Shopping")',
+            data: formData,
+            success: function (response) {
+                window.location.reload();
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+});
+    </script>
+}
+

@@ -1,0 +1,130 @@
+﻿
+@model PetShop.Web.Models.ShopView
+
+
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/User Layout/_Layout.cshtml";
+}
+
+<!-- Shop Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        <div class="col-lg-3 col-md-12">
+            <div class="col-12 pb-1">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="ml-auto">
+                        @{
+                            string defaultValue = Model.Query != null ? Model.Query.SortByType.ToString() : "";
+                        }
+
+                        <form method="post" action="@Url.Action("Shop", "Shopping")">
+                            @if (Model.Query != null)
+                            {
+                                <input type="hidden" name="Query.UserQuery" value="@Model.Query.UserQuery">
+                            }
+                            <div class="form-group">
+                                <label for="sortBySelect">Sort by:</label>
+                                <select name="Query.SortByType" id="sortBySelect" class="form-control">
+                                    @foreach (PetShop.Domain.Enums.SortBy value in Enum.GetValues(typeof(PetShop.Domain.Enums.SortBy)))
+                                    {
+                                        <option value="@value">@value.GetDisplayName()</option>
+                                    }
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Apply</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Shop Sidebar End -->
+        <!-- Shop Product Start -->
+        <div class="col-lg-9 col-md-12">
+            <div class="row pb-3">
+                <!-- Sort by Section -->
+                
+                <!-- Sort by Section End -->
+                <!-- Product items -->
+                @if (Model.Products != null || Model.Products.Any())
+                {
+                    foreach (var product in Model.Products)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
+                            <div class="card product-item border-0 mb-4">
+                                <!-- Product details -->
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="data:image;base64,@product.DefaultImageBase64" alt="@product.Title">
+                                </div>
+                                @if (!product.InStock)
+                                {
+                                    <div class="sold-out-text text-center" style="padding-top: 10px; color: darkred; font-weight: bold;">
+                                        [ Sold Out ]
+                                    </div>
+                                }
+                                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                    <h6 class="text-truncate mb-3">@product.Title</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <h6>$@product.Price</h6><h6 class="text-muted ml-2"></h6>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-between bg-light border">
+                                    <a href="@Url.Action("Detail", "Home", new {productId = @product.Id})" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                                    <button class="btn btn-sm text-dark p-0 add-to-cart-btn" data-product-id="@product.Id"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                        <h6 class="text-truncate mb-3">No Product Found</h6>
+                        </div>
+                }
+
+                            <!-- Product items End -->
+                        </div>
+                    </div>
+                    <!-- Shop Product End -->
+                </div>
+</div>
+<!-- Shop End -->
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.add-to-cart-btn').click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var quantity = 1;
+
+                var cartItem = {
+                    productId: productId,
+                    quantity: quantity
+                };
+
+                $.ajax({
+                    url: '/Shopping/AddToCart',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(cartItem),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Item added to cart successfully!');
+                            $('#cart-icon').text(response.cartView.TotalItems);
+                        } else {
+          
+                            alert('Failed to add item to cart: ' + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+
+                    }
+                });
+            });
+        });
+    </script>
+}

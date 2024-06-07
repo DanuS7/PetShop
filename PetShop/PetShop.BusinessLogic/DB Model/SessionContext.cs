@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShop.BusinessLogic.DB_Model
+namespace ClassLibrary1BussinesLogic.DBModel
 {
-    class SessionContext : DbContext
+    public class SessionContext : DbContext
     {
-        public SessionContext() : base("name=petshop")
-        {
-        }
+        public SessionContext() : base("name=petShop") { }
+
         public virtual DbSet<Session> Sessions { get; set; }
     }
 }

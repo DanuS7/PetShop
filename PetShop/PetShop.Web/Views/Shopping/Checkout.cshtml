@@ -1,0 +1,211 @@
+﻿
+@model PetShop.Web.Models.CheckoutView
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/User Layout/_Layout.cshtml";
+}
+
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Checkout</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Checkout Start -->
+@Html.ValidationSummary(true)
+@using (Html.BeginForm("Checkout", "Shopping", FormMethod.Post, new { @id = "CheckoutForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container-fluid pt-5">
+        <div class="row px-xl-5">
+            <div class="col-lg-8">
+                <div class="mb-4">
+                    <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+                    <small class="font-weight-semi-bold mb-4">Fields with * are required</small>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="hidden" name="Checkout.UserId" value=@Model.Checkout.UserId>
+                            <label>* First Name</label>
+                            @Html.TextBoxFor(m => m.Checkout.Username, new
+                       {
+                           @class = "form-control",
+                           placeholder = "John",
+                           title = "* Enter your First Name",
+                           value = Model?.Checkout.Username ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.Username)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Last Name</label>
+                            @Html.TextBoxFor(m => m.Checkout.Surname, new
+                       {
+                           @class = "form-control",
+                           placeholder = "Smith",
+                           title = "Enter your Last Name",
+                           value = Model?.Checkout.Surname ?? "",
+                           required = false,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.Surname)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* E-mail</label>
+
+                            @Html.TextBoxFor(m => m.Checkout.Email, new
+                       {
+                           @class = "form-control",
+                           placeholder = "example@email.com",
+                           title = "* Enter your Email",
+                           value = Model?.Checkout.Email ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.Email)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Mobile No</label>
+                            @Html.TextBoxFor(m => m.Checkout.PhoneNumber, new
+                       {
+                           @class = "form-control",
+                           placeholder = "+123456789",
+                           title = "Enter your Phone Number",
+                           value = Model?.Checkout.PhoneNumber ?? "",
+                           required = false,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.PhoneNumber)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* Address Line 1</label>
+                            @Html.TextBoxFor(m => m.Checkout.Address, new
+                       {
+                           @class = "form-control",
+                           placeholder = "123 Street",
+                           title = "* Enter your Address",
+                           value = Model?.Checkout.Address ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.Address)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* Country</label>
+                            @Html.TextBoxFor(m => m.Checkout.Country, new
+                       {
+                           @class = "form-control",
+                           placeholder = "Moldova",
+                           title = "* Enter your Country",
+                           value = Model?.Checkout.Country ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.Country)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* City</label>
+                            @Html.TextBoxFor(m => m.Checkout.City, new
+                       {
+                           @class = "form-control",
+                           placeholder = "Chisinau",
+                           title = "* Enter your City",
+                           value = Model?.Checkout.City ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.City)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* State</label>
+                            @Html.TextBoxFor(m => m.Checkout.State, new
+                       {
+                           @class = "form-control",
+                           placeholder = "Chisinau",
+                           title = "* Enter your State",
+                           value = Model?.Checkout.State ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.State)
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>* ZIP Code</label>
+                            @Html.TextBoxFor(m => m.Checkout.ZipCode, new
+                       {
+                           @class = "form-control",
+                           placeholder = "1234",
+                           title = "* Enter your ZIP Code",
+                           value = Model?.Checkout.ZipCode ?? "",
+                           required = true,
+                       })
+                            @Html.ValidationMessageFor(m => m.Checkout.ZipCode)
+                        </div>
+                        <div class="col-md-12 form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                @if (Model.UCart != null && Model.UCart.Items != null && Model.UCart.Items.Any())
+                {
+                    <div class="card border-secondary mb-5">
+                        <div class="card-header bg-secondary border-0">
+                            <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="font-weight-medium mb-3">Products</h5>
+                            @foreach (var item in Model.UCart.Items)
+                            {
+                                <div class="d-flex justify-content-between">
+                                    <p>@item.ProductName</p>
+                                </div>
+                                    <div class="d-flex justify-content-between">
+
+                                        <p>$@item.ProductPrice x @item.Quantity </p>
+                                        <p>Total: $@(item.TotalPrice)</p>
+                                    </div>
+                                    }
+                                    <hr class="mt-0">
+                                </div>
+                                <div class="card-footer border-secondary bg-transparent">
+                                    <div class="d-flex justify-content-between mt-2">
+                                        <h5 class="font-weight-bold">Total</h5>
+                                        <h5 class="font-weight-bold">$@Model.UCart.TotalPrice</h5>
+                                    </div>
+                                </div>
+                            </div>
+                }
+
+
+                <div class="card border-secondary mb-5">
+                    <div class="card-header bg-secondary border-0">
+                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                <label class="custom-control-label" for="paypal">Paypal</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                <label class="custom-control-label" for="directcheck">Direct Check</label>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer border-secondary bg-transparent">
+                        <button type="submit" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<!-- Checkout End -->

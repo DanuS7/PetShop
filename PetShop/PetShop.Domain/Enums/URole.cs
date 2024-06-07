@@ -8,8 +8,8 @@ namespace PetShop.Domain.Enums
 {
     public enum URole
     {
-        user = 0,
-        moderator = 1,
+        guest = 0,
+        user = 1,
         admin = 2
     }
 }

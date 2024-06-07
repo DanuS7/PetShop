@@ -58,6 +58,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -90,13 +91,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Response\ULoginResp.cs" />
-    <Compile Include="Entities\Response\URegisterResp.cs" />
+    <Compile Include="Entities\Response\Response.cs" />
+    <Compile Include="Entities\Shop\AddToCartData.cs" />
+    <Compile Include="Entities\Shop\CartDbTable.cs" />
+    <Compile Include="Entities\Shop\CartItemData.cs" />
+    <Compile Include="Entities\Shop\ClearCartItemData.cs" />
+    <Compile Include="Entities\Shop\DailyRevenueData.cs" />
+    <Compile Include="Entities\Shop\EditProductData.cs" />
+    <Compile Include="Entities\Shop\HourlyRevenueData.cs" />
+    <Compile Include="Entities\Shop\KnowledgeData.cs" />
+    <Compile Include="Entities\Shop\KnowledgeDbTable.cs" />
+    <Compile Include="Entities\Shop\OrderDbTable.cs" />
+    <Compile Include="Entities\Shop\OrderItemDb.cs" />
+    <Compile Include="Entities\Shop\OrderStatusData.cs" />
+    <Compile Include="Entities\Shop\ProdDbTable.cs" />
+    <Compile Include="Entities\Shop\ProductData.cs" />
+    <Compile Include="Entities\Shop\QueryData.cs" />
+    <Compile Include="Entities\Shop\RemoveItemCartData.cs" />
+    <Compile Include="Entities\Shop\ReviewData.cs" />
+    <Compile Include="Entities\Shop\ReviewDbTable.cs" />
+    <Compile Include="Entities\Shop\UCheckoutData.cs" />
+    <Compile Include="Entities\User\GuestRegisterData.cs" />
     <Compile Include="Entities\User\Session.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\URegisterData.cs" />
     <Compile Include="Entities\User\UserMinimal.cs" />
+    <Compile Include="Enums\OrderStatus.cs" />
+    <Compile Include="Enums\ProductCategory.cs" />
+    <Compile Include="Enums\SortBy.cs" />
     <Compile Include="Enums\URole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

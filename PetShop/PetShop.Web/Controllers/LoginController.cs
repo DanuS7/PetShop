@@ -2,6 +2,7 @@
 using PetShop.BusinessLogic;
 using PetShop.BusinessLogic.Interfaces;
 using PetShop.Domain.Entities.User;
+using PetShop.Web.Extensions;
 using PetShop.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,10 @@ namespace PetShop.Web.Controllers
                 {
                     HttpCookie cookie = _session.GenCookie(login.Email);
                     ControllerContext.HttpContext.Response.Cookies.Add(cookie);
-
+                    if(userLogin.ActionStatusMsg != null && userLogin.ActionStatusMsg == "admin")
+                    {
+                        return RedirectToAction("Dashboard", "Admin");
+                    }
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -55,6 +59,21 @@ namespace PetShop.Web.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            var currentUser = System.Web.HttpContext.Current.GetMySessionObject();
+            var response = _session.UserLogout(currentUser);
+            if(response.Status)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else 
+            {
+                ModelState.AddModelError("", response.ActionStatusMsg);
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

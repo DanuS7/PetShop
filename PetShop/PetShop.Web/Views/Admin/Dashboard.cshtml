@@ -1,0 +1,80 @@
+﻿@using Newtonsoft.Json
+@model PetShop.Web.Models.AdminDashboardView
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/Admin Layout/_AdminLayout.cshtml";
+}
+
+<!-- ============================================================== -->
+<!-- wrapper  -->
+<!-- ============================================================== -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- ============================================================== -->
+            <!-- pageheader  -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">E-commerce Dashboard Template </h2>
+                        <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                        <div class="page-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
+            <div class="ecommerce-widget">
+                <!-- Daily Revenue Table -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-muted">Daily Revenue</h5>
+                                <!-- Table for the daily revenue data -->
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Hour</th>
+                                                <th>Revenue</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var hourlyData in Model.DailyRevenue.revenueByHour)
+                                            {
+                                                <tr>
+                                                    <td>@hourlyData.Hour:00</td>
+                                                    <td>@hourlyData.Revenue</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- recent orders  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- end recent orders  -->
+                <!-- ============================================================== -->
+
+            </div>
+        </div>
+    </div>
+</div>

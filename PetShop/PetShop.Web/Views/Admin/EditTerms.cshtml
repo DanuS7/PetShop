@@ -1,0 +1,50 @@
+﻿@model PetShop.Web.Models.EditTermsModel 
+
+@{
+    ViewBag.Title = "Edit Terms";
+    Layout = "~/Views/Shared/Admin Layout/_AdminLayout.cshtml";
+}
+
+<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Edit Terms and Conditions</h2>
+                        @Html.ValidationSummary(true)
+                        @using (Html.BeginForm("EditTerms", "Admin", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <h4>Terms and Conditions</h4>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        @Html.TextAreaFor(model => model.TermsAndConditions, new 
+                                   {
+                                       @class = "form-control", 
+                                       rows = "25",
+                                       value = Model?.TermsAndConditions ?? "",
+                                       required = "true"
+                                   })
+                                        @Html.ValidationMessageFor(model => model.TermsAndConditions, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Save" class="btn btn-default" />
+                                        <a href="@Url.Action("Dashboard")" class="btn btn-success btn-sm float-right">Back</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

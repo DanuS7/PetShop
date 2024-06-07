@@ -1,0 +1,54 @@
+﻿
+
+<!-- Topbar Start -->
+<div class="container-fluid">
+    <div class="row bg-secondary py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark" href="@Url.Action("Terms","Home")">Our Terms</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a href=@Url.Action("Index", "Home") class="text-decoration-none">
+                <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Pet</span>Shop</h1>
+            </a>
+        </div>
+        <div class="col-lg-6 col-6 text-left">
+            @{
+                string defaultValue = Model.Query != null ? Model.Query.UserQuery : "";
+            }
+            <form method="post" action="@Url.Action("Shop", "Shopping")">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="Query.UserQuery" placeholder="Search for products" value="@defaultValue">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-6 text-right">
+            <a href="@Url.Action("Cart", "Shopping")" class="btn border">
+                <i class="fas fa-shopping-cart text-primary"></i>
+                @if (Model != null && Model.UCart != null)
+                {
+                    <span class="badge" id="cart-icon">@Model.UCart.TotalItems</span>
+                }
+                else
+                {
+                    <span class="badge" id="cart-icon">0</span>
+                }
+
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->

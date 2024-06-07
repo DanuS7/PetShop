@@ -1,0 +1,170 @@
+﻿@model PetShop.Web.Models.CartView
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/User Layout/_Layout.cshtml";
+}
+
+<!-- Page Header Start -->
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Shopping Cart</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Shopping Cart</p>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Cart Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        @if (Model != null && Model.Items != null && Model.Items.Any())
+        {
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-bordered text-center mb-0">
+                    <thead class="bg-secondary text-dark">
+                        <tr>
+                            <th>Products</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+
+
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr id="cart-item-@item.ProductId" class="cart-item">
+                                <td class="align-middle"><img src="data:image;base64,@item.DefaultImageFile" alt="@item.ProductName" style="width: 50px;">@item.ProductName</td>
+                                <td class="align-middle">$ @item.ProductPrice</td>
+                                <td class="align-middle">
+                                    <div class="input-group quantity mx-auto" style="width: 100px;">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-danger btn-remove" data-product-id="@item.ProductId">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <span class="bg-secondary text-center quantity-text" style="padding: 0 10px;">@item.Quantity</span>
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-sm btn-primary btn-add" data-product-id="@item.ProductId">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle total-price">$ @item.TotalPrice</td>
+                                <td class="align-middle"><button class="btn btn-sm btn-primary btn-clear" data-product-id="@item.ProductId"><i class="fa fa-times"></i></button></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold">$ @Model.TotalPrice</h5>
+                    </div>
+                    <a href="@Url.Action("Checkout", "Shopping")" class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</a>
+                </div>
+                <!-- Cart Summary -->
+            </div>
+        }
+        else
+        {
+            <h3 class="text-center cart-empty-message">Your cart is empty</h3>
+        }
+
+    </div>
+</div>
+<!-- Cart End -->
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('.btn-add').click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var quantity = 1;
+
+                var cartItem = {
+                    productId: productId,
+                    quantity: quantity
+                };
+
+                $.ajax({
+                    url: '/Shopping/AddToCart',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(cartItem),
+                    success: function (response) {
+                        if (response.success) {
+                            alert('Item added to cart successfully!');
+                            window.location.reload();
+                        } else {
+                            alert('Failed to add item to cart: ' + response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error adding item to cart: ' + error);
+                    }
+                });
+            });
+
+            $('.btn-remove').click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var quantity = 1;
+
+                var cartItem = {
+                    productId: productId,
+                    quantity: quantity
+                };
+
+                $.ajax({
+                    url: '/Shopping/RemoveFromCart',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(cartItem),
+                    success: function () {
+                        alert('Item removed from cart successfully!');
+                        window.location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error removing item from cart: ' + error);
+                    }
+                });
+            });
+
+            $('.btn-clear').click(function (e) {
+                e.preventDefault();
+                var productId = $(this).data('product-id');
+                var quantity = 1;
+
+                var cartItem = {
+                    productId: productId,
+                    quantity: quantity
+                };
+
+                $.ajax({
+                    url: '/Shopping/ClearItem',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(cartItem),
+                    success: function () {
+                        alert('Item cleared from cart successfully!');
+                        window.location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error clearing item from cart: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+}

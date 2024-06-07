@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PetShop.BusinessLogic;
 using PetShop.BusinessLogic.Interfaces;
+using PetShop.Domain.Entities.Response;
 using PetShop.Domain.Entities.User;
 using PetShop.Web.Models;
 using System;
@@ -22,6 +23,7 @@ namespace PetShop.Web.Controllers
         // GET: Register
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -36,8 +38,26 @@ namespace PetShop.Web.Controllers
                 data.LoginIp = Request.UserHostAddress;
                 data.LoginDateTime = DateTime.Now;
 
-                var userRegister = _session.UserRegister(data);
-                if (userRegister.Status)
+                var guestCookie = Request.Cookies["PetShop-Guest"];
+                var response = new Response();
+                if(guestCookie != null) 
+                {
+                    var guestProfile = _session.GetUserByCookie(guestCookie.Value);
+                    response = _session.UserRegister(data, guestProfile);
+                    System.Web.HttpContext.Current.Session.Clear();
+                    if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("PetShop-Guest"))
+                    {
+                        var cookie = ControllerContext.HttpContext.Request.Cookies["PetShop-Guest"];
+                        if (cookie != null)
+                        {
+                            cookie.Expires = DateTime.Now.AddDays(-1);
+                            ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                        }
+                    }
+                }
+                else response = _session.UserRegister(data, null);
+               
+                if (response.Status)
                 {
                     HttpCookie cookie = _session.GenCookie(register.Email);
                     ControllerContext.HttpContext.Response.Cookies.Add(cookie);
@@ -46,7 +66,7 @@ namespace PetShop.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", userRegister.ActionStatusMsg);
+                    ModelState.AddModelError("", response.ActionStatusMsg);
                     return View();
                 }
             }
